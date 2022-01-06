@@ -190,12 +190,14 @@ pbp_with_surface <- within(pbp_with_surface, surface[stadium == 'U.S. Bank Stadi
 
 pbp_with_surface <- within(pbp_with_surface, surface[stadium == 'Gillette Stadium'] <- 'fieldturf')
 
-#Adjusting temperature, setting dome temperatures to 68. For open,
-#assuming it's a mild climate and also went with 68.
+#Adjusting temperature, domes in this data frequently have a temp of NA. Setting dome temperatures to 68.
+#For open, assuming it's a mild day and also went with 68.
 
 pbp_with_surface <- within(pbp_with_surface, temp[roof == 'dome'] <- '68')
 pbp_with_surface <- within(pbp_with_surface, temp[roof == 'closed'] <- '68')
 pbp_with_surface <- within(pbp_with_surface, temp[roof == 'open'] <- '68')
+
+#There are two more punts that still appear as NA, setting these to 68.
 
 pbp_with_surface$temp[is.na(pbp_with_surface$temp)]<- '68'
 
