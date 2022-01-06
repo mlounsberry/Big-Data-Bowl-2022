@@ -393,8 +393,8 @@ data <- within(data, surface[stadium == 'U.S. Bank Stadium'] <- 'UBU')
 
 data <- within(data, surface[stadium == 'Gillette Stadium'] <- 'fieldturf')
 
-Adjusting temperature, setting dome temperatures to 68. For open,
-assuming it's a mild climate and also went with 68.
+#Adjusting temperature, setting dome temperatures to 68. For open,
+#assuming it's a mild climate and also went with 68.
 
 data <- within(data, temp[roof == 'dome'] <- '68')
 data <- within(data, temp[roof == 'closed'] <- '68')
